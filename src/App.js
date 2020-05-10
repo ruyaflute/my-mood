@@ -3,6 +3,21 @@ import logo from './logo.svg';
 import './App.css';
 
 function App() {
+ {/*
+  constructor(props) {
+    super(props);
+    this.state = {
+      mood: "" 
+}
+};
+
+saveChange = () => {
+  this.setState(() => ({
+    mood: text
+  }))
+};
+*/}
+
 
   return (
     <div className="App">
@@ -15,30 +30,28 @@ function App() {
         </p>
 
       <form className="Form" id="Moodentry">
-      <textarea 
-      id="log" 
-      cols="40" 
-      rows="5" 
-      placeholder="How am I feeling right now...">
-      </textarea>
-          
-        <a
-          className="App-link"
-          href="#"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Save
-        </a>
+        <textarea
+          id="textArea"
+          cols="40"
+          rows="5"
+          placeholder="How am I feeling right now...">
+        </textarea>
+
+        <button 
+        type="button" 
+        value="save"
+        className="Save-button"  
+        /* onClick = { this.saveChange } */
+        > Save</button>
       </form>
 
       <div id="clouds">
-	<div class="cloud x1"></div>
-	<div class="cloud x2"></div>
-	<div class="cloud x3"></div>
-	<div class="cloud x4"></div>
-	<div class="cloud x5"></div>
-</div>
+        <div class="cloud x1"></div>
+        <div class="cloud x2"></div>
+        <div class="cloud x3"></div>
+        <div class="cloud x4"></div>
+        <div class="cloud x5"></div>
+      </div>
 
 
     </div>

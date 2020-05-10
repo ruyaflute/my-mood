@@ -25,6 +25,9 @@ handleSubmit(event) {
 render() {
 
   return (
+
+    <div id="clouds">
+
     <div className="App">
       {/*<header className="App-header"> </header>
         <img src={logo} className="App-logo" alt="logo" /> */}
@@ -34,6 +37,12 @@ render() {
         Show me how you feel, I will show you the weather.
         </p>
 
+        <div class="cloud x1"></div>
+        <div class="cloud x2"></div>
+        <div class="cloud x3"></div>
+        <div class="cloud x4"></div>
+        <div class="cloud x5"></div>
+
       <form onSubmit={this.handleSubmit}
       className="Form" id="Moodentry">
         <textarea
@@ -41,7 +50,7 @@ render() {
           cols="40"
           rows="5"
           placeholder="How am I feeling right now..."
-            value={this.state.value} onChange={this.handleChange}>
+          value={this.state.value} onChange={this.handleChange}>
         </textarea>
 
         <input type="submit" value="Submit" />
@@ -54,7 +63,7 @@ render() {
         > Save</button>*/}
         </form> 
 
-      <div id="clouds">
+
         <div class="cloud x1"></div>
         <div class="cloud x2"></div>
         <div class="cloud x3"></div>

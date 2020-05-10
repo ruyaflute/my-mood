@@ -64,6 +64,11 @@ render() {
         </form> 
 
 
+<div class="sun"></div>
+
+
+
+
         <div class="cloud x1"></div>
         <div class="cloud x2"></div>
         <div class="cloud x3"></div>

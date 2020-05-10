@@ -40,8 +40,8 @@ render() {
           id="textArea"
           cols="40"
           rows="5"
-          placeholder="How am I feeling right now...">
-            value={this.state.value} onChange={this.handleChange}
+          placeholder="How am I feeling right now..."
+            value={this.state.value} onChange={this.handleChange}>
         </textarea>
 
         <input type="submit" value="Submit" />

@@ -1,5 +1,4 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 import Form from 'react-bootstrap/Form';
 import Col from 'react-bootstrap/Col';
@@ -89,10 +88,14 @@ class App extends React.Component {
         </div>
       </Container>
       <div class="cloud x1"></div>
+
         <div class="cloud x2"></div>
         <div class="cloud x3"></div>
         <div class="cloud x4"></div>
         <div class="cloud x5"></div>
+    
+        
+        <div class="sun"></div>
 
     </div>);
   }

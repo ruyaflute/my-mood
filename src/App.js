@@ -17,6 +17,7 @@ class App extends React.Component {
         text: "",
       },
       mood: "",
+      theme: "",
     };
   }
 
@@ -45,19 +46,21 @@ class App extends React.Component {
       });
   };
 
-  handleBackground = () => {
-    if (this.state.mood === "NEGATIVE") {
-      return 
+   handleBackground = () => {
+    if (!this.state.mood) {
+      return startBackground;
+    } else if (this.state.mood === "NEGATIVE") {
+      return cloudFromCss;
     } else {
-      return 
+      return sunFromCss;
     }
-  }
+  }; 
 
   render() {
     const isLoading = this.state.isLoading;
     const formData = this.state.formData;
     const mood = this.state.mood;
- 
+
     const sunFromCss = {
       ".sun": {
         position: "absolute",
@@ -74,13 +77,17 @@ class App extends React.Component {
         animationDuration: "3s",
         animationIterationCount: "infinite",
         transform: "scale(2.5)",
-        opacity: "0.8"
+        opacity: "0.8",
       },
       "@keyframes backdiv": { "50%": { background: "#bde6f3" } },
       "@keyframes beat": {
         "0%": { transform: "scale(2.5) rotate(-45deg)" },
-        "50%": { transform: "scale(2) rotate(-45deg)" }
-      }
+        "50%": { transform: "scale(2) rotate(-45deg)" },
+      },
+    };
+
+    const startBackground = {
+      "#clouds": { padding: "100px 0", background: "#c9dbe9" },
     };
 
     const cloudFromCss = {
@@ -92,7 +99,7 @@ class App extends React.Component {
         borderRadius: "200px",
         animationName: "moveclouds",
         animationIterationCount: "infinite",
-        position: "relative"
+        position: "relative",
       },
       ".cloud:before,\n.cloud:after": {
         content: '""',
@@ -103,46 +110,46 @@ class App extends React.Component {
         top: "-15px",
         left: "10px",
         borderRadius: "100px",
-        transform: "rotate(30deg)"
+        transform: "rotate(30deg)",
       },
       ".cloud:after": {
         width: "120px",
         height: "120px",
         top: "-55px",
         left: "auto",
-        right: "15px"
+        right: "15px",
       },
       ".x1": { opacity: "0.8", animationDuration: "15s" },
       ".x2": {
         left: "200px",
         transform: "scale(0.6)",
         opacity: "0.6",
-        animationDuration: "25s"
+        animationDuration: "25s",
       },
       ".x3": {
         left: "-250px",
         top: "-200px",
         opacity: "0.8",
-        animationDuration: "20s"
+        animationDuration: "20s",
       },
       ".x4": {
         left: "470px",
         top: "-250px",
         transform: "scale(0.75)",
         opacity: "0.75",
-        animationDuration: "18s"
+        animationDuration: "18s",
       },
       ".x5": {
         left: "-150px",
         top: "-150px",
         transform: "scale(0.8)",
         opacity: "0.8",
-        animationDuration: "20s"
+        animationDuration: "20s",
       },
       "@keyframes moveclouds": {
         "0%": { marginLeft: "1000px" },
-        "100%": { marginLeft: "-1000px" }
-      }
+        "100%": { marginLeft: "-1000px" },
+      },
     };
 
     return (
@@ -178,6 +185,7 @@ class App extends React.Component {
                     onClick={!isLoading ? this.handlePredictClick : null}
                   >
                     {isLoading ? "Getting mood" : "Get mood"}
+
                   </Button>
                 </Col>
               </Row>
@@ -189,21 +197,23 @@ class App extends React.Component {
                 </Col>
               </Row>
             )}
+            {() => this.handleBackground()}
+
+            }
+            
           </div>
         </Container>
 
-        <div class="cloud x1"></div>
-        <div class="cloud x2"></div>
-        <div class="cloud x3"></div>
-        <div class="cloud x4"></div>
-        <div class="cloud x5"></div>
-{/*
-        <div class="back"></div> */}
-        
-        <div class="sun"></div>
-        
+        <div className="cloud x1"></div>
+        <div className="cloud x2"></div>
+        <div className="cloud x3"></div>
+        <div className="cloud x4"></div>
+        <div className="cloud x5"></div>
+        {/*
+        <div className="back"></div> */}
 
-        </div>
+        <div className="sun"></div>
+      </div>
     );
   }
 }

@@ -44,7 +44,19 @@ class App extends React.Component {
       .then((response) => {
         this.setState({ mood: response.result, isLoading: false });
       });
-  };
+ 
+    };
+
+ getClouds = () => {
+        return (
+          <div className="cloud">
+           <div className="cloud x1"></div>
+            <div className="cloud x2"></div>
+            <div className="cloud x3"></div>
+          </div>
+        );
+      }
+
 
   render() {
     const isLoading = this.state.isLoading;
@@ -98,7 +110,7 @@ class App extends React.Component {
                   
             {mood.includes("POSITIVE") ? 
             (<div className="sun"></div>): 
-            (<div className="cloud x1"></div>)}
+            (<div className="App">{this.getClouds}</div>)}
             
           </div>
         </Container>

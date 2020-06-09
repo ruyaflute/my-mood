@@ -108,9 +108,10 @@ class App extends React.Component {
               </Row>
             )}
                   
-            {mood.includes("POSITIVE") ? 
+            {mood === "" ? null : (
+            mood.includes("POSITIVE") ? 
             (<div className="sun"></div>): 
-            (<div className="App">{this.getClouds()}</div>)}
+            (<div className="App">{this.getClouds()}</div>))}
             
           </div>
         </Container>

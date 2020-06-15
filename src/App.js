@@ -55,8 +55,8 @@ class App extends React.Component {
             <div className="cloud x5"></div>
           </div>
         );
-      }
-   
+      };
+      
 
   render() {
     const isLoading = this.state.isLoading;
@@ -64,7 +64,7 @@ class App extends React.Component {
     const mood = this.state.mood;
     
     return (
-      <div id="clouds">
+      <div id="background">
         <Container>
           <div>
             <h1 className="title">Welcome to My Mood</h1>
@@ -100,13 +100,6 @@ class App extends React.Component {
                 </Col>
               </Row>
             </Form>
-            {mood === "" ? null : (
-              <Row>
-                <Col className="mood-container">
-                <h5 id="mood">{mood}</h5>
-                </Col>
-              </Row>
-            )}
                   
             {mood === "" ? null : (
             mood.includes("POSITIVE") ? 

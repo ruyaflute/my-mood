@@ -100,11 +100,18 @@ class App extends React.Component {
                 </Col>
               </Row>
             </Form>
-                  
+            {mood === "" ? null : (
+              <Row>
+                <Col className="mood-container">
+                  <h5 id="mood">{mood}</h5>
+                 </Col>
+               </Row>
+             )}
+               
             {mood === "" ? null : (
             mood.includes("POSITIVE") ? 
             (<div className="sun"></div>): 
-            (<div className="App">{this.getClouds()}</div>))}
+            (<div>{this.getClouds()}</div>))}
             
           </div>
         </Container>

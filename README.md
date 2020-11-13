@@ -1,5 +1,12 @@
 <<<<<<< HEAD
 # my-mood
+
+[![Demo CountPages alpha](https://j.gifs.com/oVLwEA.gif)](https://youtu.be/GnkShLV-C78)
+
+
+
+
+
 =======
 to run the server
 cd into the service directory
